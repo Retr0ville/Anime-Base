@@ -1,0 +1,17 @@
+body {
+  min-height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0) !important;
+}
+body, button, .label, .malbase {
+  font-family: 'Yanone Kaffeesatz', sans-serif !important;
+  letter-spacing: 0.5px;
+}
+.main.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-image: url("/img/wall.png");
+  background-repeat: repeat;
+  background-position: 50% -20px;
+}
