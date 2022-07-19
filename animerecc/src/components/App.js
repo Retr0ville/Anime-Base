@@ -58,10 +58,9 @@ class App extends React.Component {
           </div>
         ),
       });
-      console.log(response);
 
       console.log(this.state);
-      this.setState({ currentPage: 0, offset: 0 });
+      this.setState({ currentPage: 1, offset: 0 });
     } catch (err) {
       if (err.message === "Request failed with status code 400") {
         this.setState({
@@ -75,9 +74,8 @@ class App extends React.Component {
               }}
             >
               {" "}
-              {/* {user} is not a MyAnimeList.com user */}
-
-              Hi {user || 'user'}, JikanApi is deprecated, I'm currently working on a new Implmentation 🫡✨
+              {user} is not a MyAnimeList.com user
+              {/* Hi {user || 'user'}, JikanApi is deprecated, I'm currently working on a new Implmentation 🫡✨ */}
             </div>
           ),
         });
