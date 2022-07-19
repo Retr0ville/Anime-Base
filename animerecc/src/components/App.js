@@ -20,7 +20,19 @@ class App extends React.Component {
     };
     this.handlePageClick = this.handlePageClick.bind(this);
   }
-
+  config = {
+    method: "get",
+    url: "https://api.myanimelisat.net/v2/users/nekomata1037/animelist",
+    header: {
+      'X-MAL-CLIENT-ID':'17uoEtuihi6Lsg4hdedT7PUhF4FNgBPD2F'
+    },
+    params: {
+      fields:'list_status,id,title,main_picture,alternative_titles,start_date,end_date,synopsis,mean,rank,popularity,num_list_users',
+      status: '',
+      limit: 1000
+    }
+    // "https://api.myanimelisat.net/v2/users/nekomata1037/animelist?limit=1000&status=completed&fields=list_status,id,title,main_picture,alternative_titles,start_date,end_date,synopsis,mean,rank,popularity,num_list_users",
+  }
   onSearchSubmit = async (user, category) => {
     this.setState({ loading: true });
     try {
@@ -28,9 +40,8 @@ class App extends React.Component {
       // const response = await axios.get(
       //   `https://api.jikan.moe/v3/user/${user}/animelist/${category}`
       // );
-      const response = await axios.get(
-        
-      )
+      const response = await axios( {...this.config, url:this.config.url.replace(/nekomata1037/, user),  params: {...this.config.params, status:category}})
+      console.log(response);
       this.setState({
         animeResult: response.data.anime,
         message: (
@@ -147,7 +158,6 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    console.log("mounted");
     this.pageList();
   }
   render() {
