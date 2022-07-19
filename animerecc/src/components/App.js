@@ -24,9 +24,13 @@ class App extends React.Component {
   onSearchSubmit = async (user, category) => {
     this.setState({ loading: true });
     try {
+      //  deprecated JIKAN
+      // const response = await axios.get(
+      //   `https://api.jikan.moe/v3/user/${user}/animelist/${category}`
+      // );
       const response = await axios.get(
-        `https://api.jikan.moe/v3/user/${user}/animelist/${category}`
-      );
+        
+      )
       this.setState({
         animeResult: response.data.anime,
         message: (
@@ -60,7 +64,9 @@ class App extends React.Component {
               }}
             >
               {" "}
-              {user} is not a MyAnimeList.com user
+              {/* {user} is not a MyAnimeList.com user */}
+
+              Hi {user || 'user'}, JikanApi is deprecated, I'm currently working on a new Implmentation 🫡✨
             </div>
           ),
         });
@@ -152,7 +158,6 @@ class App extends React.Component {
           <span>Malbase</span>
         </h1>
         <HeaderWithChild>
-          <>
             <SearchForm onSubmit={this.onSearchSubmit} />
             <div className="message top">{this.state.message}
             {this.state.animeResult.length > 0 && (
@@ -173,7 +178,6 @@ class App extends React.Component {
           </div>
         )}
         </div>
-          </>
         </HeaderWithChild>
         <div className="message bot">{this.state.message}</div>
         {this.state.animeResult.length > 0 && (
