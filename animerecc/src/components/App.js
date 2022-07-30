@@ -122,7 +122,7 @@ class App extends React.Component {
         animeUrl={`https://myanimelist.net/anime/${node.id}`}
         imgUrl={node.main_picture.large}
         animeTitle={node.title}
-        vidUrl={`https://myanimelist.net/anime/${node.id}/${node.title.replace(/ /g, '_')}`}
+        vidUrl={`https://myanimelist.net/anime/${node.id}/${node.title.replace(/ /g, '_')}/video`}
         fromDate={node.start_date}
         toDate={node.end_date}
         totalEpis={node.num_episodes}

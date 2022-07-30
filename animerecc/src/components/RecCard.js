@@ -3,11 +3,11 @@ import React from "react";
 const RecCard = (props) => {
   return (
     <div className="card" style={{ backgroundColor: "black" }}>
-      <a href={props.animeUrl} className="image">
+      <a href={props.animeUrl} rel="noreferrer" target="_blank" className="image">
         <img alt="poster" src={props.imgUrl} />
       </a>
       <div className="content">
-        <a className="header ani-title" href={props.animeUrl}>
+        <a className="header ani-title" target="_blank" rel="noreferrer"  href={props.animeUrl}>
           {props.animeTitle}
         </a>
         <a href={props.vidUrl} className="ui button red">
