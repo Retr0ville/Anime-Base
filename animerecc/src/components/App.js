@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 import ReactPaginate from "react-paginate";
 import RecCard from "./RecCard";
 import SearchForm from "./SearchForm";
@@ -21,29 +21,25 @@ class App extends React.Component {
     this.handlePageClick = this.handlePageClick.bind(this);
   }
   config = {
-    method: "get",
-    url: "https://api.myanimelisat.net/v2/users/nekomata1037/animelist",
-    header: {
-      'X-MAL-CLIENT-ID':'17uoEtuihi6Lsg4hdedT7PUhF4FNgBPD2F'
+    method: "GET",
+    headers: {
+      'X-MAL-CLIENT-ID':'179f13498c7d3aca2057368324e732c3',
     },
-    params: {
-      fields:'list_status,id,title,main_picture,alternative_titles,start_date,end_date,synopsis,mean,rank,popularity,num_list_users',
-      status: '',
-      limit: 1000
-    }
-    // "https://api.myanimelisat.net/v2/users/nekomata1037/animelist?limit=1000&status=completed&fields=list_status,id,title,main_picture,alternative_titles,start_date,end_date,synopsis,mean,rank,popularity,num_list_users",
+    // mode: 'no-cors',
   }
   onSearchSubmit = async (user, category) => {
     this.setState({ loading: true });
+    const stats =  category === 'all' ? '' : `status=${category}`
     try {
       //  deprecated JIKAN
       // const response = await axios.get(
       //   `https://api.jikan.moe/v3/user/${user}/animelist/${category}`
       // );
-      const response = await axios( {...this.config, url:this.config.url.replace(/nekomata1037/, user),  params: {...this.config.params, status:category}})
-      console.log(response);
+      const response = await fetch( `https://rtrvl-cors.herokuapp.com/https://api.myanimelist.net/v2/users/${user}/animelist?limit=1000&fields=list_status,id,title,main_picture,alternative_titles,start_date,end_date,synopsis,mean,rank,popularity,num_list_users&${stats}`, this.config)
+      const res = await response.json()
+      console.log(res);
       this.setState({
-        animeResult: response.data.anime,
+        animeResult: res.data,
         message: (
           <div
             className="ui label"
@@ -54,7 +50,7 @@ class App extends React.Component {
             }}
           >
             {" "}
-            Greeting's {user}, You requested {response.data.anime.length} items
+            Greeting's {user}, You requested {res.data.length} items
           </div>
         ),
       });
@@ -62,7 +58,7 @@ class App extends React.Component {
       console.log(this.state);
       this.setState({ currentPage: 1, offset: 0 });
     } catch (err) {
-      if (err.message === "Request failed with status code 400") {
+      if (err.error === "not_found") {
         this.setState({
           message: (
             <div

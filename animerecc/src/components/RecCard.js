@@ -20,8 +20,8 @@ const RecCard = (props) => {
               Air date:{" "}
               {props.fromDate === null
                 ? ""
-                : "from " + props.fromDate.slice(0, 7)}
-              {props.toDate === null ? "" : ", to " + props.toDate.slice(0, 7)}
+                : "from " + props.fromDate?.slice(0, 7)}
+              {props.toDate === null ? "" : ", to " + props.toDate?.slice(0, 7)}
             </div>
           </div>
           <div className="extra content right floated" align="right">
