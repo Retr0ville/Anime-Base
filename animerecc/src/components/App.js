@@ -116,19 +116,19 @@ class App extends React.Component {
       this.state.offset,
       this.state.offset + this.state.perPage
     );
-    const postAnimeSlice = animeSlice.map((anime) => (
+    const postAnimeSlice = animeSlice.map(({list_status, node}) => (
       <RecCard
-        key={anime.mal_id}
-        animeUrl={anime.url}
-        imgUrl={anime.image_url}
-        animeTitle={anime.title}
-        vidUrl={anime.video_url}
-        fromDate={anime.start_date}
-        toDate={anime.end_date}
-        totalEpis={anime.total_episodes}
-        seenEpis={anime.watched_episodes}
-        rating={anime.rating}
-        score={anime.score}
+        key={node.id}
+        animeUrl={`https://myanimelist.net/anime/${node.id}`}
+        imgUrl={node.main_picture.large}
+        animeTitle={node.title}
+        vidUrl={`https://myanimelist.net/anime/${node.id}/${node.title.replace(/ /g, '_')}`}
+        fromDate={node.start_date}
+        toDate={node.end_date}
+        totalEpis={node.num_episodes}
+        seenEpis={list_status.num_episodes_watched}
+        rating={node.rating}
+        score={list_status.score}
       />
     ));
     this.setState({

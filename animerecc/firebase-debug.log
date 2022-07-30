@@ -1,0 +1,66 @@
+[debug] [2022-07-30T06:42:14.456Z] ----------------------------------------------------------------------
+[debug] [2022-07-30T06:42:14.466Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\My\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-07-30T06:42:14.469Z] CLI Version:   9.5.0
+[debug] [2022-07-30T06:42:14.470Z] Platform:      win32
+[debug] [2022-07-30T06:42:14.471Z] Node Version:  v18.0.0
+[debug] [2022-07-30T06:42:14.481Z] Time:          Sat Jul 30 2022 07:42:14 GMT+0100 (West Africa Standard Time)
+[debug] [2022-07-30T06:42:14.482Z] ----------------------------------------------------------------------
+[debug] [2022-07-30T06:42:14.483Z] 
+[debug] [2022-07-30T06:42:14.497Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-07-30T06:42:14.939Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-07-30T06:42:14.942Z] > authorizing via signed-in user
+[debug] [2022-07-30T06:42:14.944Z] [iam] checking project malbase-721e8 for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2022-07-30T06:42:14.953Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-07-30T06:42:14.955Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-07-30T06:42:15.500Z] <<< HTTP RESPONSE 200 {"date":"Sat, 30 Jul 2022 12:45:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-07-30T06:42:15.532Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/malbase-721e8:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2022-07-30T06:42:15.610Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-07-30T06:42:15.611Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-07-30T06:42:17.071Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 30 Jul 2022 12:45:02 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1129","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-07-30T06:42:17.078Z] > refreshing access token with scopes: []
+[debug] [2022-07-30T06:42:17.079Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-07-30T06:42:17.510Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sat, 30 Jul 2022 12:45:02 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-07-30T06:42:17.532Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/malbase-721e8 [none]
+[debug] [2022-07-30T06:42:18.286Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/malbase-721e8 200
+[debug] [2022-07-30T06:42:18.287Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/malbase-721e8 {"projectId":"malbase-721e8","projectNumber":"701652541872","displayName":"MALbase","name":"projects/malbase-721e8","resources":{"hostingSite":"malbase-721e8","realtimeDatabaseInstance":"malbase-721e8-default-rtdb"},"state":"ACTIVE","etag":"1_fc9da16d-f7fa-4280-8fba-d5594d4e474d"}
+[debug] [2022-07-30T06:42:18.289Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/malbase-721e8 [none]
+[debug] [2022-07-30T06:42:18.880Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/malbase-721e8 200
+[debug] [2022-07-30T06:42:18.880Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/malbase-721e8 {"projectId":"malbase-721e8","projectNumber":"701652541872","displayName":"MALbase","name":"projects/malbase-721e8","resources":{"hostingSite":"malbase-721e8","realtimeDatabaseInstance":"malbase-721e8-default-rtdb"},"state":"ACTIVE","etag":"1_fc9da16d-f7fa-4280-8fba-d5594d4e474d"}
+[info] 
+[info] === Deploying to 'malbase-721e8'...
+[info] 
+[info] i  deploying database, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2022-07-30T06:42:18.903Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-07-30T06:42:18.904Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-07-30T06:42:19.348Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sat, 30 Jul 2022 12:45:04 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-07-30T06:42:19.377Z] >>> HTTP REQUEST GET https://firebasedatabase.googleapis.com/v1beta/projects/malbase-721e8/locations/-/instances/malbase-721e8-default-rtdb  
+ 
+[debug] [2022-07-30T06:42:20.173Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 30 Jul 2022 12:45:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-07-30T06:42:20.180Z] >>> HTTP REQUEST PUT https://malbase-721e8-default-rtdb.europe-west1.firebasedatabase.app/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2022-07-30T06:42:21.526Z] <<< HTTP RESPONSE 200 {"server":"nginx","date":"Sat, 30 Jul 2022 12:45:06 GMT","content-type":"application/json; charset=utf-8","content-length":"15","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[info] +  database: rules syntax for database malbase-721e8-default-rtdb is valid 
+[debug] [2022-07-30T06:42:21.541Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/malbase-721e8/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-07-30T06:42:23.935Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 30 Jul 2022 12:45:09 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[malbase-721e8]: beginning deploy... 
+[info] i  hosting[malbase-721e8]: found 23 files in build 
+[debug] [2022-07-30T06:42:24.069Z] > refreshing access token with scopes: []
+[debug] [2022-07-30T06:42:24.069Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-07-30T06:42:24.080Z] [hosting] hash cache [YnVpbGQ] stored for 23 files
+[debug] [2022-07-30T06:42:24.081Z] [hosting][hash queue][FINAL] {"max":18,"min":1,"avg":1,"active":0,"complete":23,"success":23,"errored":0,"retried":0,"total":23,"elapsed":35}
+[debug] [2022-07-30T06:42:24.481Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sat, 30 Jul 2022 12:45:09 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-07-30T06:42:24.499Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/malbase-721e8/versions/ec5a603721430a90:populateFiles [none]
+[debug] [2022-07-30T06:42:24.499Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/malbase-721e8/versions/ec5a603721430a90:populateFiles {"files":{"/asset-manifest.json":"f05b732a3311e546c34de7f70c6083bebf96e129494efd2311367fc46f576f71\r","/favicon.ico":"39b543668b5f5c287e84ed360a959dbc3918640c670dc05a1415f7884fb02620\r","/index.html":"d2940bbb400cede58f48b891715bfe349d4efc1d3c777552913668a7b63d151c\r","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b\r","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331\r","/manifest.json":"903152e12559ed73159021d9daeaccf581f270dc31c312c60b326059bb902266\r","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49\r","/css/index.css":"10b7b6b583d1cec7aaf087a73e10155ba1007eb37b95e098ef9e21104ae284b7\r","/img/ani.png":"3cf478be25974c8f89e18e5e666f1df80cfae9ef42ef7bc1205ec0cee63952d0\r","/img/cooldood.gif":"0f78a71a20cd995616ebaccc2088136360e9abc10c96dcafb93d4d4ccb8551ed\r","/img/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9\r","/img/leviside.png":"bcc4b7bb9d20c0564d033ad7e3c90ccb45322d80afb84d4ad9768c2402cdb511\r","/img/seige.png":"5c71338c7bc16261bb727a0f766ebea71bb0804b53e0d905eada5b12f582a927\r","/img/wall.png":"7297b71ee729e6aac8c248a736eb4507b1a7c145cb3a511d1700140d66b8fcf4\r","/static/css/main.e9ecef5d.chunk.css":"a5423e8cc7d408d6372215423e86d80cf1503dd2b5a32fc45fd9705f1bf5fa8b\r","/static/css/main.e9ecef5d.chunk.css.map":"01d79a13d3aa262ac4e995ee2e27e6d8417055adda7e3d17d07fecd69772d4d8\r","/static/js/2.a188d191.chunk.js":"748597eb21dc0b52090ce1d2add90b78c88fbcfd31a3a414ddd732167077ef3d\r","/static/js/2.a188d191.chunk.js.LICENSE.txt":"ce98b709ba3090e2b70f108549b5a3dd3387efdd9d093e8667bda6357e45cabd\r","/static/js/2.a188d191.chunk.js.map":"b9f31215c0994bb9761584b5d0cc45a59ba74572afb932d23686fbb074176d33\r","/static/js/main.c9bab5a4.chunk.js":"be90d3921b0e9f66fe9e8d41ae8adc00b4b6c0ad808e7cea7cde064523186253\r","/static/js/main.c9bab5a4.chunk.js.map":"15d2526fa2620c93a91358efbb9dacae2276072749756d21dc2d06b366c9db3d\r","/static/js/runtime-main.faf0c611.js":"34c5ffe24e7b40c9a5e699bcc22a2772b072290837ed4a9545b34703c7991c41\r","/static/js/runtime-main.faf0c611.js.map":"e8ece0f5bf740f3d4e6e5ae95cb90bfebb3b301e0c883eecad0feb11d753adde\r"}}
