@@ -28,6 +28,14 @@ body, button, .label {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
+.datestrip {
+  background: #1a1a1a;
+  color: rgb(134, 59, 248);
+  width: fit-content;
+  float: right;
+  border-radius: 3px;
+  padding-inline: 10px;
+}
 .set1 {
   display: flex;
   flex-wrap: nowrap;

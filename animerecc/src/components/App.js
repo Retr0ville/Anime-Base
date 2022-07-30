@@ -35,8 +35,11 @@ class App extends React.Component {
       // const response = await axios.get(
       //   `https://api.jikan.moe/v3/user/${user}/animelist/${category}`
       // );
-      const response = await fetch( `https://rtrvl-cors.herokuapp.com/https://api.myanimelist.net/v2/users/${user}/animelist?limit=1000&fields=list_status,id,title,main_picture,alternative_titles,start_date,end_date,synopsis,mean,rank,popularity,num_list_users&${stats}`, this.config)
+      const response = await fetch( `https://rtrvl-cors.herokuapp.com/https://api.myanimelist.net/v2/users/${user}/animelist?limit=1000&fields=list_status,id,title,main_picture,alternative_titles,start_date,end_date,synopsis,mean,rank,popularity,start_date,end_date,rating,num_episodes,num_list_users&${stats}`, this.config)
       const res = await response.json()
+      if (res.error){
+        throw new Error(res.error)
+      }
       this.setState({
         animeResult: res.data,
         message: (
@@ -53,11 +56,9 @@ class App extends React.Component {
           </div>
         ),
       });
-
-      console.log(this.state);
       this.setState({ currentPage: 1, offset: 0 });
     } catch (err) {
-      if (err.error === "not_found") {
+      if (err.message === "not_found") {
         this.setState({
           message: (
             <div
@@ -69,7 +70,11 @@ class App extends React.Component {
               }}
             >
               {" "}
-              {user} is not a MyAnimeList.com user
+              {user ?
+                (`${user} is not a MyAnimeList.com user`) 
+                :
+                ("Include a username... (try sammy)")
+              }
               {/* Hi {user || 'user'}, JikanApi is deprecated, I'm currently working on a new Implmentation 🫡✨ */}
             </div>
           ),
