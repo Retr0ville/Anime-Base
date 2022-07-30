@@ -27,7 +27,7 @@ class SearchForm extends React.Component {
   watchStatus2 = [
     {
       id: "onHold",
-      value: "onhold",
+      value: "on_hold",
       label: "On Hold",
     },
     {
@@ -37,7 +37,7 @@ class SearchForm extends React.Component {
     },
     {
       id: "ptw",
-      value: "ptw",
+      value: "plan_to_watch",
       label: "Plan to Watch",
     }
   ];

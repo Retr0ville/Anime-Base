@@ -37,7 +37,6 @@ class App extends React.Component {
       // );
       const response = await fetch( `https://rtrvl-cors.herokuapp.com/https://api.myanimelist.net/v2/users/${user}/animelist?limit=1000&fields=list_status,id,title,main_picture,alternative_titles,start_date,end_date,synopsis,mean,rank,popularity,num_list_users&${stats}`, this.config)
       const res = await response.json()
-      console.log(res);
       this.setState({
         animeResult: res.data,
         message: (
